@@ -1,0 +1,161 @@
+.footer {
+	width: 100%;
+	padding: 91px 0 100px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: $pink;
+	color: #fff;
+	z-index: -1;
+	overflow: hidden;
+	.inner {
+		width: 750px;
+		margin: 0 auto;
+	}
+
+	.footer-top {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.menu-area {
+		max-width: 70%;
+	}
+	.menu-item {
+		font-family: $font-kr;
+		font-weight: 700;
+		padding: 7px 0;
+		font-size: 24px;
+		letter-spacing: -0.025em;
+		line-height: 1.25;
+	}
+
+	.group-area {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	.sns-box {
+		display: flex;
+		justify-content: end;
+		a {
+			display: block;
+			& + a {
+				margin-left: 20px;
+			}
+		}
+		i {
+			display: block;
+			font-size: 28px;
+			width: 36px;
+			height: 36px;
+			line-height: 36px;
+			text-align: center;
+		}
+	}
+
+	.alarm-box {
+		display: flex;
+		justify-content: center;
+		align-items: end;
+		font-family: $font-en;
+		text-transform: uppercase;
+		font-size: 14px;
+		line-height: 1.4;
+		font-weight: 600;
+		.txt {
+			margin-right: 10px;
+		}
+
+		@keyframes figAni {
+			0% {
+				transform: translateX(0px);
+			}
+			25% {
+				transform: translateX(25px);
+			}
+			50% {
+				transform: translateX(15px);
+			}
+			75% {
+				transform: translateX(25px);
+			}
+			100% {
+				transform: translateX(0px);
+			}
+		}
+
+		img {
+			margin-top: -17px;
+			animation: figAni 1s ease-in-out infinite;
+		}
+
+		.switch {
+			position: relative;
+			width: 75px;
+			height: 32px;
+			background-color: #fff;
+			color: $pink;
+			border-radius: 50px;
+			margin-left: 30px;
+			line-height: 32px;
+			font-size: 13px;
+			text-align: right;
+			font-weight: 700;
+			.circle {
+				position: absolute;
+				top: 50%;
+				left: 5px;
+				transform: translateY(-50%);
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				border-radius: 50%;
+				background-color: $pink;
+			}
+		}
+	}
+
+	.footer-bottom {
+		margin-top: 40px;
+	}
+
+	.corp-area {
+		margin-bottom: 28px;
+		span {
+			display: inline-block;
+			padding-right: 15px;
+			position: relative;
+			vertical-align: middle;
+			font-weight: 400;
+			line-height: 1.75;
+			font-size: 14px;
+			color: #fff;
+			font-weight: bold;
+			&:not(:last-child) {
+				&::after {
+					content: '';
+					display: block;
+					width: 1px;
+					height: 10px;
+					position: absolute;
+					right: 7px;
+					top: 50%;
+					margin-top: -4px;
+					background: #ffffff;
+					background: rgba(255, 255, 255, 0.4);
+				}
+			}
+		}
+	}
+
+	.copy-area {
+		font-size: 13px;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		line-height: 1.75;
+		color: rgba(#fff, 0.7);
+		font-family: $font-en;
+	}
+}

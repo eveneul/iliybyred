@@ -1,0 +1,71 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	z-index: 5;
+	.inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 100%;
+		padding: 50px 70px;
+	}
+
+	.logo {
+		a {
+			display: block;
+		}
+		width: 140px;
+		height: 70px;
+		background: url(../images/logo-pink.png) no-repeat center;
+	}
+
+	.util-area {
+		display: flex;
+		align-items: center;
+	}
+
+	.btn-search {
+		display: block;
+		width: 50px;
+		height: 50px;
+		padding: 8px;
+		margin-right: 8px;
+	}
+	.btn-menu {
+		display: block;
+		width: 50px;
+		height: 50px;
+		padding: 10px;
+
+		.bar-wrap {
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+		.bar {
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 4px;
+			display: inline-block;
+			background-color: $pink;
+
+			&:first-child {
+				top: 0;
+			}
+
+			&:nth-of-type(2) {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			&:nth-of-type(3) {
+				bottom: 0;
+			}
+		}
+	}
+}

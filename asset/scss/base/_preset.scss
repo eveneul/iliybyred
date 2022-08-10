@@ -1,0 +1,28 @@
+.blind {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	margin: -1px;
+}
+
+.transparent {
+	color: transparent;
+	opacity: 0;
+}
+
+.badge-play {
+	position: absolute;
+	left: 30px;
+	bottom: 30px;
+	width: 56px;
+	height: 56px;
+	&::after {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: url(../images/ic-play.png) no-repeat;
+	}
+}
