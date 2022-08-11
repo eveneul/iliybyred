@@ -632,9 +632,10 @@ a {
   color: #000;
 }
 
-.ball {
-  background: url(../images/ball-bg.png) no-repeat center/cover;
-  border-radius: 100%;
+.heart {
+  background: url(../images/ico-pixel.png) no-repeat center/cover;
+  width: 100px;
+  height: 94px;
 }
 
 .container {
@@ -1095,7 +1096,8 @@ a {
 
 .sc-story {
   position: relative;
-  padding: 298px 0 166px;
+  padding: 298px 0 0;
+  margin-bottom: 116px;
   overflow: hidden;
 }
 .sc-story .bubble {
@@ -1160,6 +1162,7 @@ a {
 }
 
 .sc-video {
+  position: relative;
   background: #e5d5c5;
   padding: 140px 0;
 }

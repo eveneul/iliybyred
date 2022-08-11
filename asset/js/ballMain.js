@@ -1,7 +1,12 @@
 var canvas;
 
 var delta = [0, 0];
-var stage = [window.screenX, 2000, window.innerWidth, window.innerHeight];
+var stage = [
+	window.screenX,
+	window.screenY,
+	window.innerWidth,
+	window.innerHeight,
+];
 getBrowserDimensions();
 
 var themes = [
@@ -32,11 +37,35 @@ var PI2 = Math.PI * 2;
 
 var timeOfLastTouch = 0;
 
-init();
-play();
+// init();
+// play();
+
+function startAni() {
+	init();
+	play();
+}
+
+function test() {
+	console.log('르ㅜㄹ루');
+}
+
+// startAni();
+
+gsap.to('.sc-video', {
+	scrollTrigger: {
+		trigger: '.sc-video',
+		start: 'top center',
+		end: 'bottom 100px',
+		onEnter: startAni,
+	},
+});
+
+function text() {
+	console.log('테스트');
+}
 
 function init() {
-	canvas = document.querySelector('.sc-belog');
+	canvas = document.getElementById('canvas');
 
 	document.onmousedown = onDocumentMouseDown;
 	document.onmouseup = onDocumentMouseUp;
@@ -52,7 +81,7 @@ function init() {
 
 	worldAABB = new b2AABB();
 	worldAABB.minVertex.Set(-200, -200);
-	worldAABB.maxVertex.Set(window.innerWidth + 1000, window.innerHeight + 1000);
+	worldAABB.maxVertex.Set(window.innerWidth + 200, window.innerHeight + 200);
 
 	world = new b2World(worldAABB, new b2Vec2(0, 0), true);
 
@@ -130,7 +159,7 @@ function createBall(x, y) {
 	element.style.OTransform = 'translateZ(0)';
 	element.style.msTransform = 'translateZ(0)';
 	element.style.transform = 'translateZ(0)';
-	element.classList.add('ball');
+	element.classList.add('heart');
 
 	var graphics = element.getContext('2d');
 
@@ -288,17 +317,7 @@ function getBodyAtMouse() {
 	return body;
 }
 
-console.log();
-
 function setWalls() {
-	const main = document.querySelector('.sc-belog');
-	pageHeight = main.clientHeight; // TODO : try remove main id (currently padding issue)
-	stage = [
-		window.screenX,
-		window.screenY,
-		window.innerWidth,
-		parseInt(pageHeight),
-	];
 	if (wallsSetted) {
 		world.DestroyBody(walls[0]);
 		world.DestroyBody(walls[1]);
@@ -339,8 +358,6 @@ function setWalls() {
 		wall_thickness,
 		stage[3]
 	);
-
-	wallsSetted = true;
 
 	wallsSetted = true;
 }
