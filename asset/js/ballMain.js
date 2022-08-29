@@ -37,32 +37,25 @@ var PI2 = Math.PI * 2;
 
 var timeOfLastTouch = 0;
 
-// init();
-// play();
+let isActive = false;
 
 function startAni() {
-	init();
-	play();
+	if (isActive == false) {
+		init();
+		play();
+		isActive = true;
+	}
+	return;
 }
-
-function test() {
-	console.log('르ㅜㄹ루');
-}
-
-// startAni();
 
 gsap.to('.sc-video', {
 	scrollTrigger: {
 		trigger: '.sc-video',
 		start: 'top center',
-		end: 'bottom 100px',
+		// end: 'bottom 100px',
 		onEnter: startAni,
 	},
 });
-
-function text() {
-	console.log('테스트');
-}
 
 function init() {
 	canvas = document.getElementById('canvas');
@@ -146,7 +139,7 @@ function createBall(x, y) {
 	var x = x || Math.random() * stage[2];
 	var y = y || Math.random() * -200;
 
-	var size = 114;
+	var size = 40;
 
 	var element = document.createElement('canvas');
 	element.width = size;

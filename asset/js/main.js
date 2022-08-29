@@ -135,13 +135,6 @@ $(function () {
 	rollingText.repeat(-1);
 	// 색상 선택시
 
-	$('.thumb-item').on('click', function (e) {
-		const el = $(e.target);
-		el.parent().children().removeClass('active');
-		el.addClass('active');
-		el.parent().siblings('.color-desc').text(el.data('color'));
-	});
-
 	// sc-product 부분 스와이퍼
 
 	var swiper = new Swiper('.best-slide', {
@@ -199,8 +192,6 @@ $(function () {
 		onEnter: () => {
 			bubble.play();
 		},
-
-		// animations: bubble,
 	});
 
 	$('.sc-story').mousemove(function (e) {
